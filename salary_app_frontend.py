@@ -3,10 +3,9 @@
 import streamlit as st
 import numpy as np
 import pickle
-with open("salary price.pkl", "rb") as f:
-    model = pickle.load(f)
+
 # load the pickel file to model
-#model=pickle.load(open(r"salary price.pkl","rb"))
+model=pickle.load(open(r"salary price.pkl","rb"))
 
 # write a titel
 st.title("SALARY PREDICTION App")
