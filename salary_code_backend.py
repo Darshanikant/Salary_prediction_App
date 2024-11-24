@@ -8,7 +8,7 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 # import data set
-data=pd.read_csv(r"Salary_Data.csv")
+data=pd.read_csv("Salary_Data.csv")
 
 
 #split into dependent and independent variable
