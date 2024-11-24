@@ -3,9 +3,12 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+import pickle
 
 # import data set
-data=pd.read_csv(r"C:\Users\sunil\Desktop\DK\vs code\SALARY_PREDICTION\Salary_Data.csv")
+data=pd.read_csv(r"Salary_Data.csv")
 
 
 #split into dependent and independent variable
@@ -14,14 +17,10 @@ y=data.iloc[:,-1].values
 
 
 # split the data to train test split
-
-from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(x,y,train_size=0.8,test_size=0.2,random_state=0)
 
 
 # fit LinearRegression model to x_train, y_train
-
-from sklearn.linear_model import LinearRegression
 regressor=LinearRegression() 
 regressor.fit(x_train,y_train)
 
@@ -66,7 +65,6 @@ print("The variance score :-",variance)
 
 
 # Save the trained model to disk
-import pickle
 filename = 'salary price.pkl'
 with open(filename, 'wb') as file:
     pickle.dump(regressor, file)
